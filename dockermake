@@ -1,0 +1,27 @@
+#!/bin/sh
+tag=$1
+shift
+
+case "$tag" in
+    "debian")
+        tab="debian:lates"
+        ;;
+    "ubuntu")
+        tag="ubuntu:latest"
+        ;;
+    "precise")
+        tag="ubuntu:precise"
+        ;;
+    "trusty")
+        tag="ubuntu:trusty"
+        ;;
+    "xenial")
+        tag="ubuntu:xenial"
+        ;;
+esac
+
+echo "FROM $tag" > Dockerfile
+cat Dockerfile.template >> Dockerfile
+
+docker build -t precise-make .
+docker run --rm -it -v "${PWD}/output:/out" precise-make $@
