@@ -1,4 +1,5 @@
-FROM ubuntu:precise
+ARG tag="debian:latest"
+FROM ${tag}
 
 # Set locale to fix character encoding
 RUN locale-gen en_US.UTF-8

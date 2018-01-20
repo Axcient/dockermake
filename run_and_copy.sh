@@ -1,5 +1,5 @@
 #!/bin/sh
-sh -c $@
+sh -c "$@"
 if find . -mindepth 1 -print -quit | grep -q .; then
-    cp /make/* /out/
+    cp -a /make/* /out/
 fi
