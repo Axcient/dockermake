@@ -3,5 +3,3 @@
 # output files
 *.deb
 *.tgz
-# Dockerfile is generated
-Dockerfile

@@ -20,8 +20,9 @@ case "$tag" in
         ;;
 esac
 
-echo "FROM $tag" > Dockerfile
-cat Dockerfile.template >> Dockerfile
-
-docker build -t precise-make .
+docker build \
+    --build-arg tag=$tag \
+    -t \
+    precise-make \
+    .
 docker run --rm -it -v "${PWD}/output:/out" precise-make $@
