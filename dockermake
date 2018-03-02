@@ -15,6 +15,9 @@ case "$tag" in
     "trusty")
         tag="ubuntu:trusty"
         ;;
+    "utopic")
+        tag="ubuntu:utopic"
+        ;;
     "xenial")
         tag="ubuntu:xenial"
         ;;
@@ -23,6 +26,6 @@ esac
 docker build \
     --build-arg tag=$tag \
     -t \
-    precise-make \
+    dm-$tag \
     .
-docker run --rm -it -v "${PWD}/output:/out" precise-make $@
+docker run --rm -it -v "${PWD}/output:/out" dm-$tag $@
