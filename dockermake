@@ -4,7 +4,10 @@ shift
 
 case "$tag" in
     "debian")
-        tab="debian:lates"
+        tag="debian:latest"
+        ;;
+    "sid")
+        tag="debian:sid"
         ;;
     "ubuntu")
         tag="ubuntu:latest"
@@ -20,6 +23,9 @@ case "$tag" in
         ;;
     "xenial")
         tag="ubuntu:xenial"
+        ;;
+    "bionic")
+        tag="ubuntu:bionic"
         ;;
 esac
 
