@@ -20,6 +20,7 @@ ENV LC_ALL en_US.UTF-8
 
 COPY run_and_copy.sh /
 WORKDIR /make
+COPY input/* /make/
 
 VOLUME /out
 ENTRYPOINT ["/run_and_copy.sh"]
