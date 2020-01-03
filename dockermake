@@ -6,6 +6,9 @@ case "$tag" in
     "debian")
         tag="debian:latest"
         ;;
+    "jessie")
+        tag="debian:jessie"
+        ;;
     "sid")
         tag="debian:sid"
         ;;
